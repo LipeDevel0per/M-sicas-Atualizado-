@@ -2,7 +2,7 @@
 require_once(__DIR__ . "/funcao.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Atualiza os dados da música
+    
     $dados_musica = [
         ':id' => $_POST['id'],
         ':nome' => $_POST['nome'],
@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ':genero' => $_POST['genero']
     ];
 
-    // Se tiver nova imagem, sobrescreve
+
     if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
         $ext = pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
         $nomeImagem = 'img/musica-' . preg_replace('/[^a-zA-Z0-9]/', '_', $_POST['nome']) . '.' . $ext;

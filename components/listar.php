@@ -2,13 +2,12 @@
 <?php    
     require_once(__DIR__ . "/funcao.php");
 
-    // Verifica se a ação é excluir
+
     if (isset($_GET["acao"]) && $_GET["acao"] == "excluir") {
         $id = $_GET["id"];
         delete_musica($id);
     }
 
-    // Verifica se um dados da pessoa foi enviado via POST para consultar
     $search = isset($_POST["nome"]) ? $_POST["nome"] : '';
     $lista_musica = lista_musica($search);   
 ?>

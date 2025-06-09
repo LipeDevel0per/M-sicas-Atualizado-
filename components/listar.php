@@ -49,7 +49,7 @@
                         $album  = $musica["album"]; 
                         $genero  = $musica["genero"]; 
 
-                        // Caminho da imagem
+                        
                         $nomeImagem = 'img/musica-' . preg_replace('/[^a-zA-Z0-9]/', '_', $nome) . '.jpg';
                         $caminhoImagem = file_exists(__DIR__ . '/../' . $nomeImagem) ? "/$nomeImagem" : "https://via.placeholder.com/80x80?text=Sem+Imagem";
 

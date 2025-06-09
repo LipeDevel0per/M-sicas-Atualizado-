@@ -36,7 +36,7 @@ if (!$musica) {
     exit;
 }
 
-// Caminho da imagem atual
+
 $imagemAtual = 'img/musica-' . preg_replace('/[^a-zA-Z0-9]/', '_', $musica['nome']) . '.jpg';
 $caminhoImagem = file_exists(__DIR__ . '/../' . $imagemAtual) ? "/$imagemAtual" : "https://via.placeholder.com/100x100?text=Sem+Imagem";
 ?>

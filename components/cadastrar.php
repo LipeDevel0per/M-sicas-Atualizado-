@@ -4,14 +4,14 @@
 require_once(__DIR__ . "/funcao.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Salvar imagem da música, se enviada
+
     if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
         $ext = pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
         $nomeImagem = 'img/musica-' . preg_replace('/[^a-zA-Z0-9]/', '_', $_POST['nome']) . '.' . $ext;
         move_uploaded_file($_FILES['imagem']['tmp_name'], __DIR__ . '/../' . $nomeImagem);
     }
 
-    // Salvar dados da música
+    
     $dados_musica = [
         ':nome' => $_POST['nome'],
         ':artista' => $_POST['artista'],
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     cadastrar_musica($dados_musica);
 
-    // Redirecionar após o cadastro
+
     header("Location: index.php?pagina=listar");
     exit;
 }

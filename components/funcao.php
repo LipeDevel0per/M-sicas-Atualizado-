@@ -1,9 +1,9 @@
 <?php
-    define('DB_HOST',     '192.168.0.106'); // Endereço do servidor MySQL
-    define('DB_USER',     'root');      // Usuário padrão do MySQL
-    define('DB_PASS',     'root');          // Senha padrão do MySQL
-    define('DB_NAME',     'musicas');       // Nome do banco de dados
-    define('DB_CHARSET',  'utf8mb4');   // Charset do banco de dados utf8mb4
+    define('DB_HOST',     '192.168.0.106'); 
+    define('DB_USER',     'root');      
+    define('DB_PASS',     'root');        
+    define('DB_NAME',     'musicas');       
+    define('DB_CHARSET',  'utf8mb4');  
 
 function conectar(): PDO {
     $pdo = new PDO(
